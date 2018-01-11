@@ -1,4 +1,7 @@
 // database is let instead of const to allow us to modify it in test.js
+const yaml = require('node-yaml');
+
+
 let database = {
     users: {},
     articles: {},
@@ -43,6 +46,26 @@ const routes = {
         'PUT': downvoteComment
     }
 };
+
+function loadDatabase() {
+    yaml.read(`${__dirname}/database.yml`, {
+        encoding: 'utf8'
+    }, (err, data) => {
+        if (err) {
+            throw err;
+        }
+        database = data;
+        return data;
+    });
+}
+
+function saveDatabase() {
+    yaml.write(`${__dirname}/database.yml`, database, (err)=>{
+        if (err) {
+            throw err;
+        }
+    });
+}
 
 function downvoteComment(url, request) {
     const id = Number(url.split('/').filter(segment => segment)[1]);

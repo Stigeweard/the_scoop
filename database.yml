@@ -1,0 +1,53 @@
+users:
+  oops:
+    username: oops
+    articleIds:
+      - 1
+    commentIds: []
+  hey:
+    username: hey
+    articleIds:
+      - 2
+      - 3
+    commentIds: []
+  bro:
+    username: bro
+    articleIds:
+      - 4
+    commentIds: []
+articles:
+  '1':
+    id: 1
+    title: wat
+    url: sdf
+    username: oops
+    commentIds: []
+    upvotedBy: []
+    downvotedBy: []
+  '2':
+    id: 2
+    title: yo
+    url: dog
+    username: hey
+    commentIds: []
+    upvotedBy: []
+    downvotedBy: []
+  '3':
+    id: 3
+    title: yea
+    url: d
+    username: hey
+    commentIds: []
+    upvotedBy: []
+    downvotedBy: []
+  '4':
+    id: 4
+    title: hey
+    url: me
+    username: bro
+    commentIds: []
+    upvotedBy: []
+    downvotedBy: []
+comments: {}
+nextArticleId: 5
+nextCommentId: 1
